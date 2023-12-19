@@ -55,6 +55,7 @@ public class FlyServiceImpl implements IFlyService {
         return flyRepository.selectOriginDestiny(origin, destiny).stream().map(this::entityToResponse).collect(Collectors.toSet());
     }
 
+    //TestEntityToResponse
     private FlyResponse entityToResponse(FlyEntity entity){
         FlyResponse response = new FlyResponse();
         BeanUtils.copyProperties(entity, response);
