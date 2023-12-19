@@ -35,9 +35,10 @@ public class ReservationServiceImpl implements IReservationService {
         this.reservationRepository = reservationRepository;
         this.hotelRepository = hotelRepository;
     }
+
     @Override
     public ReservationResponse create(ReservationRequest reservationRequest) {
-        var customerDB = customerRepository.findById(reservationRequest.getIdClient()).orElseThrow();
+        var customerDB = customerRepository.findById(reservationRequest.getIdClient()).orElseThrow( );
         var hotelDB = hotelRepository.findById(reservationRequest.getIdHotel()).orElseThrow();
 
         var dateStart = TravelersUtility.getRandomDaySoon();
@@ -68,19 +69,19 @@ public class ReservationServiceImpl implements IReservationService {
     @Override
     public ReservationResponse update(ReservationRequest reservationRequest, UUID uuid) {
 
-       var reservationBD = reservationRepository.findById(uuid).orElseThrow();
-       var hotelBD = hotelRepository.findById(reservationRequest.getIdHotel()).orElseThrow();
-       var customerBD = customerRepository.findById(reservationRequest.getIdClient()).orElseThrow();
+        var reservationBD = reservationRepository.findById(uuid).orElseThrow();
+        var hotelBD = hotelRepository.findById(reservationRequest.getIdHotel()).orElseThrow();
+        var customerBD = customerRepository.findById(reservationRequest.getIdClient()).orElseThrow();
 
-       var newPrice = hotelBD.getPrice().add(BigDecimal.valueOf(reservationRequest.getTotalDays()));
+        var newPrice = hotelBD.getPrice().add(BigDecimal.valueOf(reservationRequest.getTotalDays()));
 
-       reservationBD.setHotel(hotelBD);
-       reservationBD.setCustomer(customerBD);
-       reservationBD.setTotalDays(reservationRequest.getTotalDays());
-       reservationBD.setPrice(newPrice);
+        reservationBD.setHotel(hotelBD);
+        reservationBD.setCustomer(customerBD);
+        reservationBD.setTotalDays(reservationRequest.getTotalDays());
+        reservationBD.setPrice(newPrice);
 
-       reservationRepository.save(reservationBD);
-       return entityToResponse(reservationBD);
+        reservationRepository.save(reservationBD);
+        return entityToResponse(reservationBD);
     }
 
     @Override
@@ -89,7 +90,7 @@ public class ReservationServiceImpl implements IReservationService {
         reservationRepository.delete(entityToDelete);
     }
 
-    public ReservationResponse entityToResponse(ReservationEntity request){
+    public ReservationResponse entityToResponse(ReservationEntity request) {
         var response = new ReservationResponse();
         BeanUtils.copyProperties(request, response);
         var hotel = new HotelResponse();

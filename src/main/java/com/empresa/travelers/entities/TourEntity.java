@@ -4,10 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
-import java.util.UUID;
 
 @Entity(name = "tour")
 @NoArgsConstructor
@@ -45,7 +42,7 @@ public class TourEntity implements Serializable {
     private CustomerEntity customer;
 
     @PrePersist
-    public void updateFK(){
+    public void updateFK() {
         this.tickets.forEach(ticket -> ticket.setTour(this));
         this.reservations.forEach(r -> r.setTour(this));
     }

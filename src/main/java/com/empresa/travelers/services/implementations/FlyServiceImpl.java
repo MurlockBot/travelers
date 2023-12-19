@@ -28,13 +28,14 @@ public class FlyServiceImpl implements IFlyService {
     public FlyServiceImpl(FlyRepository flyRepository) {
         this.flyRepository = flyRepository;
     }
+
     @Override
     public Page<FlyResponse> readAll(Integer page, Integer size, SortType sortType) {
         PageRequest pageRequest = null;
-        switch (sortType){
+        switch (sortType) {
             case NONE -> pageRequest = PageRequest.of(page, size);
             case LOWER -> pageRequest = PageRequest.of(page, size, Sort.by(FIELD_BY_SORT).ascending());
-            case UPPER -> pageRequest = PageRequest.of(page,size, Sort.by(FIELD_BY_SORT).descending());
+            case UPPER -> pageRequest = PageRequest.of(page, size, Sort.by(FIELD_BY_SORT).descending());
         }
         return flyRepository.findAll(pageRequest).map(this::entityToResponse);
     }
@@ -54,7 +55,7 @@ public class FlyServiceImpl implements IFlyService {
         return flyRepository.selectOriginDestiny(origin, destiny).stream().map(this::entityToResponse).collect(Collectors.toSet());
     }
 
-    private FlyResponse entityToResponse(FlyEntity entity){
+    private FlyResponse entityToResponse(FlyEntity entity) {
         FlyResponse response = new FlyResponse();
         BeanUtils.copyProperties(entity, response);
         return response;

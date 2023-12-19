@@ -17,5 +17,4 @@ public interface CatalogServices<Response> {
     Set<Response> readBetweenPrice(BigDecimal minPrice, BigDecimal maxPrice);
 
 
-
 }

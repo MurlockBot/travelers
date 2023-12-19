@@ -1,6 +1,5 @@
 package com.empresa.travelers.dto;
 
-import com.empresa.travelers.dto.HotelResponse;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

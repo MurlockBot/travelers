@@ -3,11 +3,9 @@ package com.empresa.travelers.entities;
 import com.empresa.travelers.enums.AeroLine;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.proxy.HibernateProxy;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Objects;
 import java.util.Set;
 
 @Entity(name = "fly")

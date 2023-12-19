@@ -23,11 +23,10 @@ import java.util.UUID;
 @Slf4j
 public class TicketServiceImpl implements ITicketService {
 
+    public static final BigDecimal pricePercentage = BigDecimal.valueOf(0.25);
     private final FlyRepository flyRepository;
     private final CustomerRepository customerRepository;
     private final TicketRepository ticketRepository;
-
-    public static final BigDecimal pricePercentage = BigDecimal.valueOf(0.25);
 
     public TicketServiceImpl(FlyRepository flyRepository, CustomerRepository customerRepository, TicketRepository ticketRepository) {
         this.flyRepository = flyRepository;
@@ -80,12 +79,14 @@ public class TicketServiceImpl implements ITicketService {
         var ticketUpdated = ticketRepository.save(ticketToUpdate);
         return entityToResponse(ticketUpdated);
     }
+
     @Override
     public BigDecimal findPriceTicket(Long idFly) {
         var fly = flyRepository.findById(idFly).orElseThrow();
 
         return fly.getPrice().multiply(pricePercentage).add(fly.getPrice());
     }
+
     @Override
     public void delete(UUID uuid) {
         var ticketToDelete = ticketRepository.findById(uuid).orElseThrow();
@@ -93,7 +94,7 @@ public class TicketServiceImpl implements ITicketService {
         ticketRepository.delete(ticketToDelete);
     }
 
-    private TicketResponse entityToResponse(TicketEntity entity){
+    private TicketResponse entityToResponse(TicketEntity entity) {
         var response = new TicketResponse();
         BeanUtils.copyProperties(entity, response);
         var flyResponse = new FlyResponse();

@@ -1,9 +1,6 @@
 package com.empresa.travelers.dto;
 
 import com.empresa.travelers.enums.AeroLine;
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
