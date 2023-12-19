@@ -1,6 +1,6 @@
 package com.empresa.travelers.services;
 
-import com.empresa.travelers.dto.fly.FlyResponse;
+import com.empresa.travelers.dto.FlyResponse;
 
 import java.util.Set;
 

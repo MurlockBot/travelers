@@ -1,4 +1,4 @@
-package com.empresa.travelers.dto.fly;
+package com.empresa.travelers.dto;
 
 import com.empresa.travelers.enums.AeroLine;
 import jakarta.persistence.Column;

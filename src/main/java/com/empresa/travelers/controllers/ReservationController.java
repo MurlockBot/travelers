@@ -1,9 +1,8 @@
 package com.empresa.travelers.controllers;
 
 
-import com.empresa.travelers.dto.reservation.ReservationRequest;
+import com.empresa.travelers.dto.ReservationRequest;
 import com.empresa.travelers.services.implementations.ReservationServiceImpl;
-import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

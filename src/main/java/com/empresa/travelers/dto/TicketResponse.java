@@ -1,7 +1,6 @@
-package com.empresa.travelers.dto.reservation;
+package com.empresa.travelers.dto;
 
-import com.empresa.travelers.dto.hotel.HotelResponse;
-import com.empresa.travelers.entities.HotelEntity;
+import com.empresa.travelers.dto.FlyResponse;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,23 +9,21 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Data
-public class ReservationResponse implements Serializable {
+@Builder
+public class TicketResponse implements Serializable {
     private UUID id;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm")
-    private LocalDateTime dateTimeReservation;
+    private LocalDateTime departureDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm")
+    private LocalDateTime arrivalDate;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private LocalDate dateStart;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private LocalDate dateEnd;
-    private Integer totalDays;
+    private LocalDateTime purchaseDate;
     private BigDecimal price;
-    private HotelResponse hotel;
+    private FlyResponse fly;
 }

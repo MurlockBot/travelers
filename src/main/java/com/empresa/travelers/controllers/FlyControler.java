@@ -1,9 +1,7 @@
 package com.empresa.travelers.controllers;
 
-import com.empresa.travelers.dto.fly.FlyResponse;
 import com.empresa.travelers.enums.SortType;
 import com.empresa.travelers.services.implementations.FlyServiceImpl;
-import org.hibernate.query.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

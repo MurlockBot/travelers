@@ -1,6 +1,6 @@
-package com.empresa.travelers.dto.ticket;
+package com.empresa.travelers.dto;
 
-import com.empresa.travelers.dto.fly.FlyResponse;
+import com.empresa.travelers.dto.HotelResponse;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,16 +15,17 @@ import java.util.UUID;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 @Builder
-public class TicketResponse implements Serializable {
+@Data
+public class ReservationResponse implements Serializable {
     private UUID id;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm")
-    private LocalDateTime departureDate;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm")
-    private LocalDateTime arrivalDate;
+    private LocalDateTime dateTimeReservation;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private LocalDateTime purchaseDate;
+    private LocalDate dateStart;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private LocalDate dateEnd;
+    private Integer totalDays;
     private BigDecimal price;
-    private FlyResponse fly;
+    private HotelResponse hotel;
 }

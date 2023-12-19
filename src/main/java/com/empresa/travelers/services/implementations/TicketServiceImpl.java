@@ -1,8 +1,8 @@
 package com.empresa.travelers.services.implementations;
 
-import com.empresa.travelers.dto.fly.FlyResponse;
-import com.empresa.travelers.dto.ticket.TicketRequest;
-import com.empresa.travelers.dto.ticket.TicketResponse;
+import com.empresa.travelers.dto.FlyResponse;
+import com.empresa.travelers.dto.TicketRequest;
+import com.empresa.travelers.dto.TicketResponse;
 import com.empresa.travelers.entities.TicketEntity;
 import com.empresa.travelers.repositories.CustomerRepository;
 import com.empresa.travelers.repositories.FlyRepository;
@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 

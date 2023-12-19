@@ -1,8 +1,7 @@
 package com.empresa.travelers.controllers;
 
-import com.empresa.travelers.dto.ticket.TicketRequest;
+import com.empresa.travelers.dto.TicketRequest;
 import com.empresa.travelers.services.implementations.TicketServiceImpl;
-import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

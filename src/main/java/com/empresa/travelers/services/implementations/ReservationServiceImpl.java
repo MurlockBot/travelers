@@ -1,8 +1,8 @@
 package com.empresa.travelers.services.implementations;
 
-import com.empresa.travelers.dto.hotel.HotelResponse;
-import com.empresa.travelers.dto.reservation.ReservationRequest;
-import com.empresa.travelers.dto.reservation.ReservationResponse;
+import com.empresa.travelers.dto.HotelResponse;
+import com.empresa.travelers.dto.ReservationRequest;
+import com.empresa.travelers.dto.ReservationResponse;
 import com.empresa.travelers.entities.ReservationEntity;
 import com.empresa.travelers.repositories.CustomerRepository;
 import com.empresa.travelers.repositories.HotelRepository;
@@ -16,7 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.UUID;
 
 @Transactional

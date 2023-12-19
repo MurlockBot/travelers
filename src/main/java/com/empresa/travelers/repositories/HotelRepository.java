@@ -14,5 +14,4 @@ public interface HotelRepository extends JpaRepository<HotelEntity, Long> {
     Set<HotelEntity> findByPriceLessThan(BigDecimal price);
     Set<HotelEntity> findByPriceIsBetween(BigDecimal minPrice, BigDecimal maxPrice);
     Set<HotelEntity> findByRatingGreaterThan(Integer rating);
-    Optional<HotelEntity> findByReservationsId(UUID id);
 }

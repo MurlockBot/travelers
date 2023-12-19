@@ -1,11 +1,10 @@
 package com.empresa.travelers.services.implementations;
 
-import com.empresa.travelers.dto.fly.FlyResponse;
+import com.empresa.travelers.dto.FlyResponse;
 import com.empresa.travelers.entities.FlyEntity;
 import com.empresa.travelers.enums.SortType;
 import com.empresa.travelers.repositories.FlyRepository;
 import com.empresa.travelers.services.IFlyService;
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.Page;

@@ -1,7 +1,7 @@
 package com.empresa.travelers.services;
 
-import com.empresa.travelers.dto.reservation.ReservationRequest;
-import com.empresa.travelers.dto.reservation.ReservationResponse;
+import com.empresa.travelers.dto.ReservationRequest;
+import com.empresa.travelers.dto.ReservationResponse;
 
 import java.util.UUID;
 

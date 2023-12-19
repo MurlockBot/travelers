@@ -1,4 +1,4 @@
-package com.empresa.travelers.dto.ticket;
+package com.empresa.travelers.dto;
 
 
 import lombok.AllArgsConstructor;

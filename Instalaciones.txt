@@ -3,3 +3,24 @@ Instalar Docker Desktop
 
 BeansUtiuls.copyProperties sirve para copiar de uno a otro objeto las propiedades que se llaman igual. En esta hay que mapear los objetos y metérselos luego si trae.
 Este BeansUtils se usa para remap de entityToResponse.
+
+En el ManyToOne solo le decimos el fetch y en la propiedad JoinColumn le decimos porque nombre la va a mapear.
+En cambio en el OneToMany le decimos mappedBy y el nombre que se llama la propiedad del ManyToOne. usamos CASCADE, fetach y orphanRemoval.
+
+Los enumerables tienen que ir con una propiedad llamada @Enumerated y el tipo va dentro.
+
+Cuando nos devuelve una response vacia podemos optar por usar un ternario ? : si le pasamos datos y no encuentra.
+
+En la implementación de los servicios que se van a mapear, SIEMPRE VA => @Transactional@Service@Slf4j
+
+PAGINACIÓN =>
+    @Override
+    public Page<FlyResponse> readAll(Integer page, Integer size, SortType sortType) {
+        PageRequest pageRequest = null;
+        switch (sortType){
+            case NONE -> pageRequest = PageRequest.of(page, size);
+            case LOWER -> pageRequest = PageRequest.of(page, size, Sort.by(FIELD_BY_SORT).ascending());
+            case UPPER -> pageRequest = PageRequest.of(page,size, Sort.by(FIELD_BY_SORT).descending());
+        }
+        return flyRepository.findAll(pageRequest).map(this::entityToResponse);
+    }
