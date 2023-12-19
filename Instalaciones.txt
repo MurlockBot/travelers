@@ -1,0 +1,5 @@
+Instalar desde PowerShell el WSL con WSL --INSTALL (Linux virtual)
+Instalar Docker Desktop
+
+BeansUtiuls.copyProperties sirve para copiar de uno a otro objeto las propiedades que se llaman igual. En esta hay que mapear los objetos y metérselos luego si trae.
+Este BeansUtils se usa para remap de entityToResponse.
