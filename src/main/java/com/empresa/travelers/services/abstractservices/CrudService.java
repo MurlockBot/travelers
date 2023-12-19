@@ -1,4 +1,4 @@
-package com.empresa.travelers.services;
+package com.empresa.travelers.services.abstractservices;
 
 public interface CrudService<Request, Response, ID> {
 

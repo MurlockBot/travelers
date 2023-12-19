@@ -1,4 +1,4 @@
-package com.empresa.travelers.services;
+package com.empresa.travelers.services.abstractservices;
 
 import com.empresa.travelers.enums.SortType;
 import org.springframework.data.domain.Page;

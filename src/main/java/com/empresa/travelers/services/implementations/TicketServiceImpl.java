@@ -27,7 +27,7 @@ public class TicketServiceImpl implements ITicketService {
     private final CustomerRepository customerRepository;
     private final TicketRepository ticketRepository;
 
-    private static final BigDecimal pricePercentage = BigDecimal.valueOf(0.25);
+    public static final BigDecimal pricePercentage = BigDecimal.valueOf(0.25);
 
     public TicketServiceImpl(FlyRepository flyRepository, CustomerRepository customerRepository, TicketRepository ticketRepository) {
         this.flyRepository = flyRepository;
